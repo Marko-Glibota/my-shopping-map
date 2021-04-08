@@ -1,0 +1,7 @@
+<h1>All shops (<%= @shops.count %>)</h1>
+
+<% @shops.each do |shop| %>
+  <ul>
+    <li><%= shop.name %> (<%= shop.address %>)</li>
+  </ul>
+<% end %>
