@@ -1,5 +1,6 @@
 class ShopsController < ApplicationController
-  before_action :set_shop, only: [:show, :edit, :update]
+  before_action :set_shop, only: [:show, :edit, :update, :destroy]
+
   def index
     @shops = Shop.all
   end
@@ -29,6 +30,11 @@ class ShopsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @shop.destroy
+    redirect_to shops_path
   end
 
   private

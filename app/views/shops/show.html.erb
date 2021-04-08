@@ -1,3 +1,7 @@
 <h1><%= @shop.name %></h1>
 
 <p>Address: <%= @shop.address %></p>
+
+<%= link_to "Delete shop", shop_path(@shop),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
