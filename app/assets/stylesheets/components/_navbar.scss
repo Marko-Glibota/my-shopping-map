@@ -1,0 +1,12 @@
+.navbar-site {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-site .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-site .navbar-brand img {
+  width: 80px;
+}
