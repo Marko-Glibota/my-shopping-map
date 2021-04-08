@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Shop.destroy_all
+
 first_shop = Shop.new(
   name: "Le Zephyr",
   address: "1 Rue du Jourdain, 75020 Paris"
@@ -28,3 +30,19 @@ third_shop = Shop.new(
 
 third_shop.save!
 puts "#{third_shop.name} successfully created!"
+
+fourth_shop = Shop.new(
+  name: "La Brûlerie de Jourdain",
+  address: "140 Rue de Belleville, 75020 Paris"
+  )
+
+fourth_shop.save!
+puts "#{fourth_shop.name} successfully created!"
+
+fifth_shop = Shop.new(
+  name: "Au bout du champ",
+  address: "144 Rue de Belleville, 75020 Paris"
+  )
+
+fifth_shop.save!
+puts "#{fifth_shop.name} successfully created!"
