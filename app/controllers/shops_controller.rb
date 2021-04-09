@@ -3,7 +3,7 @@ class ShopsController < ApplicationController
   before_action :set_shop, only: [:show, :edit, :update, :destroy]
 
   def index
-    @shops = Shop.all
+    @shops = policy_scope(Shop)
   end
 
   def show
@@ -12,11 +12,14 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
     @shop.user = current_user
+    authorize @shop
   end
 
   def create
     @shop = Shop.new(shop_params)
     @shop.user = current_user
+    authorize @shop
+
     if @shop.save
       redirect_to shop_path(@shop)
     else
@@ -44,6 +47,7 @@ class ShopsController < ApplicationController
 
   def set_shop
     @shop = Shop.find(params[:id])
+    authorize @shop
   end
 
   def shop_params

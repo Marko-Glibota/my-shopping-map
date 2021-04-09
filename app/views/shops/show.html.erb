@@ -2,8 +2,11 @@
 
 <p>Address: <%= @shop.address %></p>
 
-<%= link_to "Edit shop", edit_shop_path(@shop) %>
-
-<%= link_to "Delete shop", shop_path(@shop),
+<% if policy(@shop).edit? && policy(@shop).destroy? %>
+  <%= link_to "Edit shop", edit_shop_path(@shop) %>
+  <%= link_to "Delete shop", shop_path(@shop),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
