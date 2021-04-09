@@ -11,10 +11,12 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @shop.user = current_user
   end
 
   def create
     @shop = Shop.new(shop_params)
+    @shop.user = current_user
     if @shop.save
       redirect_to shop_path(@shop)
     else
