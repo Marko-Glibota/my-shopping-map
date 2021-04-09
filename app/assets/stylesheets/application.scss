@@ -7,3 +7,16 @@
 
 //CSS partial
 @import "components/index";
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 62px;
+  font-weight: 800;
+  color: $blue;
+}
